@@ -1,4 +1,4 @@
-#21BITV01
-#2100004822-Phan Duy Khanh
-#2100005686-Lê Hải Đăng
+# 21BITV01
+# 2100004822-Phan Duy Khanh
+# 2100005686-Lê Hải Đăng
 
