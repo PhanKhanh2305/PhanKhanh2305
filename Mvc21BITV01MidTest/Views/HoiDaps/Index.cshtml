@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Mvc21BITV01MidTest.Data.HoiDap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CauHoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TraLoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaNvNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CauHoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TraLoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNvNavigation.MaNv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaHd">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaHd">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaHd">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

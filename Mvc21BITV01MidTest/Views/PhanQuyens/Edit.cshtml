@@ -1,0 +1,59 @@
+﻿@model Mvc21BITV01MidTest.Data.PhanQuyen
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PhanQuyen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaPq" />
+            <div class="form-group">
+                <label asp-for="MaPb" class="control-label"></label>
+                <select asp-for="MaPb" class="form-control" asp-items="ViewBag.MaPb"></select>
+                <span asp-validation-for="MaPb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaTrang" class="control-label"></label>
+                <select asp-for="MaTrang" class="form-control" asp-items="ViewBag.MaTrang"></select>
+                <span asp-validation-for="MaTrang" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Them" /> @Html.DisplayNameFor(model => model.Them)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sua" /> @Html.DisplayNameFor(model => model.Sua)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Xoa" /> @Html.DisplayNameFor(model => model.Xoa)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Xem" /> @Html.DisplayNameFor(model => model.Xem)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

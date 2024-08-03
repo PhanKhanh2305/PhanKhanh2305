@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Mvc21BITV01MidTest.Data.ChiTietHd>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Chi Tiet Hoa Don</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHhNavigation.TenHh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHhNavigation.MoTaDonVi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHhNavigation.DonGia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHhNavigation.TenHh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHhNavigation.MoTaDonVi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHhNavigation.DonGia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaCt">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaCt">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaCt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
